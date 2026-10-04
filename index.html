@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raisa Lee Soriano — Front-End Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="loader">
+    <div class="loader-ring"></div>
+    <div class="loader-name">Raisa<span>.exe</span></div>
+    <div class="loader-status">Initializing Digital Space ✦</div>
+    <div class="loader-bar"><div></div></div>
+</div>
+
+<!-- GLOBAL FX -->
+<div class="noise"></div>
+<div class="mouse-glow" id="mouseGlow" aria-hidden="true"></div>
+<div class="scanline"></div>
+
+<!-- Y2K / CHROME MAGIC LAYERS -->
+<div class="mist-aura" aria-hidden="true"></div>
+<div class="chrome-sky-glow" aria-hidden="true"></div>
+<div class="chrome-sky-glow sky-left" aria-hidden="true"></div>
+<div class="bg-world" aria-hidden="true">
+    <div class="bg-blob bb1"></div>
+    <div class="bg-blob bb2"></div>
+    <div class="bg-blob bb3"></div>
+    <div class="bg-blob bb4"></div>
+    <div class="bg-cloud bc1"></div>
+    <div class="bg-cloud bc2"></div>
+    <div class="bg-cloud bc3"></div>
+    <div class="bg-cloud bc4"></div>
+    <div class="bg-cloud bc5"></div>
+    <div class="dot-col dc1"></div>
+    <div class="dot-col dc2"></div>
+    <div class="dot-col dc3"></div>
+    <svg class="bg-swirl sw1" viewBox="0 0 200 200"><path d="M40 100 C40 40 160 40 160 100 C160 150 70 150 70 100 C70 70 130 70 130 100" fill="none" stroke="rgba(130,170,200,.35)" stroke-width="8" stroke-linecap="round"/></svg>
+    <svg class="bg-swirl sw2" viewBox="0 0 180 180"><path d="M30 90 C30 40 140 35 150 90 C155 130 60 140 60 95 C60 70 120 72 120 95" fill="none" stroke="rgba(200,180,220,.28)" stroke-width="6" stroke-linecap="round"/></svg>
+    <span class="bg-star s1">✦</span>
+    <span class="bg-star s2">✧</span>
+    <span class="bg-star s3">✦</span>
+    <span class="bg-star s4">⋆</span>
+    <span class="bg-star s5">✦</span>
+    <span class="bg-star s6">✧</span>
+    <span class="bg-star s7">✩</span>
+    <span class="bg-star s8">✦</span>
+    <span class="bg-star s9">✧</span>
+    <span class="bg-star s10">⋆</span>
+    <span class="bg-star s11">✦</span>
+    <span class="bg-star s12">✧</span>
+</div>
+<div class="float-bubbles" aria-hidden="true">
+    <span class="f-bubble b1"></span>
+    <span class="f-bubble b2"></span>
+    <span class="f-bubble b3"></span>
+    <span class="f-bubble b4"></span>
+    <span class="f-bubble b5"></span>
+    <span class="f-bubble b6"></span>
+    <span class="f-bubble b7"></span>
+    <span class="f-bubble b8"></span>
+    <span class="f-bubble b9"></span>
+    <span class="f-bubble b10"></span>
+</div>
+<svg class="hang-star" viewBox="0 0 40 80" aria-hidden="true">
+    <line x1="20" y1="0" x2="20" y2="48" stroke="rgba(120,160,190,.35)" stroke-width="1"/>
+    <path d="M20 48 L22 58 L32 60 L22 62 L20 72 L18 62 L8 60 L18 58 Z" fill="url(#hangChrome)"/>
+    <defs>
+        <linearGradient id="hangChrome" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#fff"/>
+            <stop offset="45%" stop-color="#9eb8c8"/>
+            <stop offset="100%" stop-color="#e8f2f8"/>
+        </linearGradient>
+    </defs>
+</svg>
+<svg class="liquid-ribbon lr-a" viewBox="0 0 400 80" aria-hidden="true" preserveAspectRatio="none">
+    <path d="M0 40 C60 10 100 70 160 40 C220 10 260 70 320 40 C360 20 380 50 400 40" fill="none" stroke="url(#liqGrad)" stroke-width="6" stroke-linecap="round"/>
+    <defs>
+        <linearGradient id="liqGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="rgba(255,255,255,.05)"/>
+            <stop offset="40%" stop-color="rgba(255,255,255,.85)"/>
+            <stop offset="70%" stop-color="rgba(160,200,230,.55)"/>
+            <stop offset="100%" stop-color="rgba(255,255,255,.05)"/>
+        </linearGradient>
+    </defs>
+</svg>
+<svg class="liquid-ribbon lr-b" viewBox="0 0 400 80" aria-hidden="true" preserveAspectRatio="none">
+    <path d="M0 50 C80 20 120 60 200 35 C280 10 320 65 400 40" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="4" stroke-linecap="round"/>
+</svg>
+<div class="scroll-chrome" aria-hidden="true"><div class="scroll-chrome-fill"></div></div>
+<div class="grunge-scratch" aria-hidden="true"></div>
+<div class="holo-veil" aria-hidden="true"></div>
+<div class="scroll-world" aria-hidden="true">
+    <div class="sw-orb o1" data-speed="0.12"></div>
+    <div class="sw-orb o2" data-speed="-0.08"></div>
+    <div class="sw-orb o3" data-speed="0.18"></div>
+    <div class="sw-ring r1" data-speed="0.06"></div>
+    <div class="sw-ring r2" data-speed="-0.1"></div>
+</div>
+
+<!-- Chrome rays -->
+<div class="chrome-ray r1"></div>
+<div class="chrome-ray r2"></div>
+<div class="chrome-ray r3"></div>
+<div class="chrome-ray r4"></div>
+<div class="chrome-ray r5"></div>
+
+<!-- == SVG DECO: Crescent Moon == -->
+<svg class="deco deco-moon" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+    <path d="M38 8 A22 22 0 1 0 38 52 A16 16 0 1 1 38 8 Z" fill="#a0a0f8" opacity=".9"/>
+    <circle cx="42" cy="16" r="2" fill="#a0a0f8" opacity=".7"/>
+    <circle cx="48" cy="22" r="1.5" fill="#a0a0f8" opacity=".5"/>
+</svg>
+
+<!-- == SVG DECO: Angel Wings (left+right pair) == -->
+<svg class="deco deco-wings" viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
+    <!-- Left wing -->
+    <g opacity=".82">
+        <path d="M110 60 C95 40 60 20 30 35 C15 42 10 58 25 65 C38 71 60 58 75 52 C60 68 45 85 35 95 C48 88 75 72 92 58 C85 72 80 90 82 105 C90 90 98 72 105 60 Z" fill="white" stroke="rgba(180,210,240,.6)" stroke-width=".8"/>
+        <path d="M110 60 C98 48 75 35 55 42 C42 48 38 60 48 66 C58 71 78 62 92 58" fill="rgba(220,235,255,.5)" stroke="none"/>
+        <!-- pink star accent -->
+        <path d="M45 38 L46.5 43.5 L52 45 L46.5 46.5 L45 52 L43.5 46.5 L38 45 L43.5 43.5 Z" fill="#8bd3f7" opacity=".9"/>
+        <path d="M68 28 L69 31.5 L72.5 32.5 L69 33.5 L68 37 L67 33.5 L63.5 32.5 L67 31.5 Z" fill="#b8e8d9" opacity=".7"/>
+    </g>
+    <!-- Right wing (mirrored) -->
+    <g transform="scale(-1,1) translate(-220,0)" opacity=".82">
+        <path d="M110 60 C95 40 60 20 30 35 C15 42 10 58 25 65 C38 71 60 58 75 52 C60 68 45 85 35 95 C48 88 75 72 92 58 C85 72 80 90 82 105 C90 90 98 72 105 60 Z" fill="white" stroke="rgba(180,210,240,.6)" stroke-width=".8"/>
+        <path d="M110 60 C98 48 75 35 55 42 C42 48 38 60 48 66 C58 71 78 62 92 58" fill="rgba(220,235,255,.5)"/>
+        <path d="M45 38 L46.5 43.5 L52 45 L46.5 46.5 L45 52 L43.5 46.5 L38 45 L43.5 43.5 Z" fill="#8bd3f7" opacity=".9"/>
+    </g>
+    <!-- glow circle centre -->
+    <circle cx="110" cy="60" r="14" fill="rgba(255,255,255,.35)" filter="url(#wglow)"/>
+    <defs><filter id="wglow"><feGaussianBlur stdDeviation="5"/></filter></defs>
+</svg>
+
+<!-- == SVG DECO: Ribbon bow top-left == -->
+<svg class="deco deco-bow-1" viewBox="0 0 80 50" xmlns="http://www.w3.org/2000/svg">
+    <path d="M40 25 C30 15 10 10 8 22 C6 32 22 35 40 25 Z" fill="white" stroke="rgba(200,215,230,.8)" stroke-width="1" opacity=".85"/>
+    <path d="M40 25 C50 15 70 10 72 22 C74 32 58 35 40 25 Z" fill="white" stroke="rgba(200,215,230,.8)" stroke-width="1" opacity=".85"/>
+    <ellipse cx="40" cy="25" rx="5" ry="4" fill="white" stroke="rgba(180,205,225,.9)" stroke-width="1"/>
+    <!-- ribbon tails -->
+    <path d="M38 28 C32 38 26 44 20 46" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".75"/>
+    <path d="M42 28 C48 38 54 44 60 46" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".75"/>
+</svg>
+
+<!-- == SVG DECO: Ribbon bow right == -->
+<svg class="deco deco-bow-2" viewBox="0 0 70 44" xmlns="http://www.w3.org/2000/svg">
+    <path d="M35 22 C26 13 8 9 7 19 C5 28 20 31 35 22 Z" fill="rgba(190,220,240,.9)" stroke="rgba(145,195,225,.7)" stroke-width="1"/>
+    <path d="M35 22 C44 13 62 9 63 19 C65 28 50 31 35 22 Z" fill="rgba(190,220,240,.9)" stroke="rgba(145,195,225,.7)" stroke-width="1"/>
+    <ellipse cx="35" cy="22" rx="4.5" ry="3.5" fill="rgba(205,230,245,.95)" stroke="rgba(145,195,225,.8)" stroke-width="1"/>
+    <path d="M33 25 C28 33 23 38 18 40" stroke="rgba(190,220,240,.8)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M37 25 C42 33 47 38 52 40" stroke="rgba(190,220,240,.8)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+</svg>
+
+<!-- == SVG DECO: Small ribbon bow scattered == -->
+<svg class="deco deco-bow-3" viewBox="0 0 50 32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M25 16 C18 9 5 6 4 14 C3 20 14 22 25 16 Z" fill="rgba(200,228,248,.9)" stroke="rgba(160,195,225,.7)" stroke-width="1"/>
+    <path d="M25 16 C32 9 45 6 46 14 C47 20 36 22 25 16 Z" fill="rgba(200,228,248,.9)" stroke="rgba(160,195,225,.7)" stroke-width="1"/>
+    <ellipse cx="25" cy="16" rx="3.5" ry="2.8" fill="rgba(220,240,252,.95)" stroke="rgba(160,195,225,.8)" stroke-width="1"/>
+</svg>
+
+<!-- == SVG DECO: 4-point sparkle stars (no emoji) == -->
+<svg class="deco deco-star-a" viewBox="0 0 40 40"><path d="M20 2 L22 18 L38 20 L22 22 L20 38 L18 22 L2 20 L18 18 Z" fill="white"/></svg>
+<svg class="deco deco-star-b" viewBox="0 0 40 40"><path d="M20 2 L22 18 L38 20 L22 22 L20 38 L18 22 L2 20 L18 18 Z" fill="white"/></svg>
+<svg class="deco deco-star-c" viewBox="0 0 40 40"><path d="M20 2 L22 18 L38 20 L22 22 L20 38 L18 22 L2 20 L18 18 Z" fill="#c8e8f8"/></svg>
+<svg class="deco deco-star-d" viewBox="0 0 24 24"><path d="M12 1 L13.2 10.8 L22 12 L13.2 13.2 L12 22 L10.8 13.2 L2 12 L10.8 10.8 Z" fill="white"/></svg>
+<svg class="deco deco-star-e" viewBox="0 0 24 24"><path d="M12 1 L13.2 10.8 L22 12 L13.2 13.2 L12 22 L10.8 13.2 L2 12 L10.8 10.8 Z" fill="#d8f0e4"/></svg>
+<svg class="deco deco-star-f" viewBox="0 0 24 24"><path d="M12 1 L13.2 10.8 L22 12 L13.2 13.2 L12 22 L10.8 13.2 L2 12 L10.8 10.8 Z" fill="white"/></svg>
+
+<!-- == SVG DECO: Pink ribbons / streamers == -->
+<svg class="deco deco-ribbon-1" viewBox="0 0 30 120" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15 0 C25 20 5 40 15 60 C25 80 5 100 15 120" stroke="rgba(145,205,232,.75)" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>
+<svg class="deco deco-ribbon-2" viewBox="0 0 30 100" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 0 C22 18 4 38 18 55 C28 68 6 85 16 100" stroke="rgba(200,225,248,.7)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg>
+
+<!-- == SVG DECO: Clouds == -->
+<svg class="deco deco-cloud-a" viewBox="0 0 120 55" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="38" rx="54" ry="20" fill="white" opacity=".5"/><ellipse cx="36" cy="30" rx="27" ry="19" fill="white" opacity=".5"/><ellipse cx="72" cy="26" rx="31" ry="21" fill="white" opacity=".5"/><ellipse cx="98" cy="34" rx="21" ry="15" fill="white" opacity=".5"/></svg>
+<svg class="deco deco-cloud-b" viewBox="0 0 100 46" xmlns="http://www.w3.org/2000/svg"><ellipse cx="50" cy="32" rx="45" ry="17" fill="white" opacity=".45"/><ellipse cx="30" cy="24" rx="23" ry="16" fill="white" opacity=".45"/><ellipse cx="62" cy="20" rx="26" ry="18" fill="white" opacity=".45"/></svg>
+<svg class="deco deco-cloud-c" viewBox="0 0 80 38" xmlns="http://www.w3.org/2000/svg"><ellipse cx="40" cy="26" rx="35" ry="14" fill="white" opacity=".42"/><ellipse cx="24" cy="20" rx="18" ry="13" fill="white" opacity=".42"/><ellipse cx="50" cy="16" rx="20" ry="14" fill="white" opacity=".42"/></svg>
+
+<!-- Floating side text -->
+<div class="float-text ft-1">Digital / Creative / 001</div>
+<div class="float-text ft-2">★ Keep Scrolling ★</div>
+
+<!-- Magic flash layer -->
+<div class="magic-flash" id="magicFlash" aria-hidden="true"></div>
+<div class="magic-orbit" id="magicOrbit" aria-hidden="true"></div>
+
+<!-- Y2K STICKERS + CORNER FRAMES -->
+<div class="corner-frame cf-tl" aria-hidden="true"></div>
+<div class="corner-frame cf-tr" aria-hidden="true"></div>
+<div class="corner-frame cf-bl" aria-hidden="true"></div>
+<div class="corner-frame cf-br" aria-hidden="true"></div>
+<div class="sticker-layer" aria-hidden="true">
+    <span class="sticker sk-chrome">✦ CHROME</span>
+    <span class="sticker sk-digital">★ DIGITAL</span>
+    <span class="sticker sk-ojt">OJT 10/26</span>
+    <span class="sticker sk-grad">GRAD · 2027</span>
+    <span class="sticker sk-pixel">◆ PIXEL</span>
+    <span class="sticker sk-magic">✧ MAGICAL</span>
+    <span class="sticker sk-web">WEB / MOBILE</span>
+</div>
+
+<!-- CHROME CHAINS (Y2K) -->
+<svg class="chain-deco chain-drape" viewBox="0 0 520 160" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="chromeLink" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="35%" stop-color="#c8d8e4"/>
+            <stop offset="55%" stop-color="#8a9eae"/>
+            <stop offset="75%" stop-color="#e8f2f8"/>
+            <stop offset="100%" stop-color="#6a7e8e"/>
+        </linearGradient>
+        <filter id="chainGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="rgba(100,140,170,.35)"/>
+        </filter>
+    </defs>
+    <g fill="none" stroke="url(#chromeLink)" stroke-width="7" stroke-linecap="round" filter="url(#chainGlow)">
+        <ellipse cx="28" cy="42" rx="16" ry="11" transform="rotate(-25 28 42)"/>
+        <ellipse cx="58" cy="52" rx="16" ry="11" transform="rotate(20 58 52)"/>
+        <ellipse cx="90" cy="48" rx="16" ry="11" transform="rotate(-18 90 48)"/>
+        <ellipse cx="122" cy="58" rx="16" ry="11" transform="rotate(22 122 58)"/>
+        <ellipse cx="154" cy="70" rx="16" ry="11" transform="rotate(-15 154 70)"/>
+        <ellipse cx="186" cy="82" rx="16" ry="11" transform="rotate(18 186 82)"/>
+        <ellipse cx="218" cy="92" rx="16" ry="11" transform="rotate(-20 218 92)"/>
+        <ellipse cx="250" cy="98" rx="16" ry="11" transform="rotate(12 250 98)"/>
+        <ellipse cx="282" cy="92" rx="16" ry="11" transform="rotate(-16 282 92)"/>
+        <ellipse cx="314" cy="80" rx="16" ry="11" transform="rotate(20 314 80)"/>
+        <ellipse cx="346" cy="68" rx="16" ry="11" transform="rotate(-14 346 68)"/>
+        <ellipse cx="378" cy="58" rx="16" ry="11" transform="rotate(18 378 58)"/>
+        <ellipse cx="410" cy="52" rx="16" ry="11" transform="rotate(-22 410 52)"/>
+        <ellipse cx="442" cy="48" rx="16" ry="11" transform="rotate(15 442 48)"/>
+        <ellipse cx="474" cy="42" rx="16" ry="11" transform="rotate(-18 474 42)"/>
+        <ellipse cx="502" cy="38" rx="14" ry="10" transform="rotate(10 502 38)"/>
+    </g>
+</svg>
+
+<svg class="chain-deco chain-side" viewBox="0 0 80 420" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="chromeLink2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#fff"/>
+            <stop offset="40%" stop-color="#b0c4d2"/>
+            <stop offset="70%" stop-color="#788c9c"/>
+            <stop offset="100%" stop-color="#e4eef4"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" stroke="url(#chromeLink2)" stroke-width="6" stroke-linecap="round">
+        <ellipse cx="40" cy="24" rx="14" ry="10" transform="rotate(8 40 24)"/>
+        <ellipse cx="40" cy="52" rx="14" ry="10" transform="rotate(-8 40 52)"/>
+        <ellipse cx="40" cy="80" rx="14" ry="10" transform="rotate(8 40 80)"/>
+        <ellipse cx="40" cy="108" rx="14" ry="10" transform="rotate(-8 40 108)"/>
+        <ellipse cx="40" cy="136" rx="14" ry="10" transform="rotate(8 40 136)"/>
+        <ellipse cx="40" cy="164" rx="14" ry="10" transform="rotate(-8 40 164)"/>
+        <ellipse cx="40" cy="192" rx="14" ry="10" transform="rotate(8 40 192)"/>
+        <ellipse cx="40" cy="220" rx="14" ry="10" transform="rotate(-8 40 220)"/>
+        <ellipse cx="40" cy="248" rx="14" ry="10" transform="rotate(8 40 248)"/>
+        <ellipse cx="40" cy="276" rx="14" ry="10" transform="rotate(-8 40 276)"/>
+        <ellipse cx="40" cy="304" rx="14" ry="10" transform="rotate(8 40 304)"/>
+        <ellipse cx="40" cy="332" rx="14" ry="10" transform="rotate(-8 40 332)"/>
+        <ellipse cx="40" cy="360" rx="14" ry="10" transform="rotate(8 40 360)"/>
+        <ellipse cx="40" cy="388" rx="14" ry="10" transform="rotate(-8 40 388)"/>
+    </g>
+</svg>
+
+<svg class="chain-deco chain-ball" viewBox="0 0 200 280" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <radialGradient id="ballChrome" cx="35%" cy="30%" r="65%">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="45%" stop-color="#c2d2de"/>
+            <stop offset="100%" stop-color="#6a7e8e"/>
+        </radialGradient>
+        <linearGradient id="charmChrome" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#fff"/>
+            <stop offset="50%" stop-color="#a8bcc8"/>
+            <stop offset="100%" stop-color="#5a7080"/>
+        </linearGradient>
+    </defs>
+    <!-- ball chain -->
+    <g>
+        <circle cx="100" cy="12" r="4.5" fill="url(#ballChrome)"/>
+        <circle cx="100" cy="24" r="4.5" fill="url(#ballChrome)"/>
+        <circle cx="100" cy="36" r="4.5" fill="url(#ballChrome)"/>
+        <circle cx="100" cy="48" r="4.5" fill="url(#ballChrome)"/>
+        <circle cx="98" cy="60" r="4.5" fill="url(#ballChrome)"/>
+        <circle cx="94" cy="72" r="4.5" fill="url(#ballChrome)"/>
+        <circle cx="88" cy="84" r="4.5" fill="url(#ballChrome)"/>
+        <circle cx="80" cy="95" r="4.5" fill="url(#ballChrome)"/>
+        <circle cx="70" cy="105" r="4.5" fill="url(#ballChrome)"/>
+        <circle cx="58" cy="114" r="4.5" fill="url(#ballChrome)"/>
+        <circle cx="48" cy="124" r="4.5" fill="url(#ballChrome)"/>
+        <circle cx="42" cy="136" r="4.5" fill="url(#ballChrome)"/>
+        <circle cx="40" cy="148" r="4.5" fill="url(#ballChrome)"/>
+        <circle cx="42" cy="160" r="4.5" fill="url(#ballChrome)"/>
+        <!-- second loop -->
+        <circle cx="102" cy="60" r="4.2" fill="url(#ballChrome)"/>
+        <circle cx="108" cy="72" r="4.2" fill="url(#ballChrome)"/>
+        <circle cx="116" cy="83" r="4.2" fill="url(#ballChrome)"/>
+        <circle cx="126" cy="93" r="4.2" fill="url(#ballChrome)"/>
+        <circle cx="138" cy="102" r="4.2" fill="url(#ballChrome)"/>
+        <circle cx="150" cy="112" r="4.2" fill="url(#ballChrome)"/>
+        <circle cx="158" cy="124" r="4.2" fill="url(#ballChrome)"/>
+        <circle cx="162" cy="136" r="4.2" fill="url(#ballChrome)"/>
+        <circle cx="160" cy="148" r="4.2" fill="url(#ballChrome)"/>
+        <circle cx="156" cy="160" r="4.2" fill="url(#ballChrome)"/>
+    </g>
+    <!-- heart charm -->
+    <g class="chain-charm charm-heart" transform="translate(28,168)">
+        <path d="M22 8 C22 2 14 -2 10 4 C6 -2 -2 2 -2 8 C-2 18 10 28 10 28 C10 28 22 18 22 8 Z" fill="url(#charmChrome)" stroke="rgba(255,255,255,.6)" stroke-width=".8"/>
+        <ellipse cx="6" cy="8" rx="3" ry="2" fill="rgba(255,255,255,.45)"/>
+    </g>
+    <!-- star charm -->
+    <g class="chain-charm charm-star" transform="translate(142,168)">
+        <path d="M18 2 L21 14 L33 14 L23 21 L27 33 L18 25 L9 33 L13 21 L3 14 L15 14 Z" fill="url(#charmChrome)" stroke="rgba(255,255,255,.55)" stroke-width=".7"/>
+        <circle cx="18" cy="16" r="3" fill="rgba(200,230,248,.55)"/>
+    </g>
+</svg>
+
+<svg class="chain-deco chain-fine" viewBox="0 0 300 40" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="fineChrome" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#fff"/>
+            <stop offset="50%" stop-color="#9eb4c4"/>
+            <stop offset="100%" stop-color="#e8f2f8"/>
+        </linearGradient>
+    </defs>
+    <g fill="url(#fineChrome)">
+        <circle cx="8" cy="20" r="3.2"/><circle cx="18" cy="20" r="3.2"/><circle cx="28" cy="20" r="3.2"/>
+        <circle cx="38" cy="20" r="3.2"/><circle cx="48" cy="20" r="3.2"/><circle cx="58" cy="20" r="3.2"/>
+        <circle cx="68" cy="20" r="3.2"/><circle cx="78" cy="20" r="3.2"/><circle cx="88" cy="20" r="3.2"/>
+        <circle cx="98" cy="20" r="3.2"/><circle cx="108" cy="20" r="3.2"/><circle cx="118" cy="20" r="3.2"/>
+        <circle cx="128" cy="20" r="3.2"/><circle cx="138" cy="20" r="3.2"/><circle cx="148" cy="20" r="3.2"/>
+        <circle cx="158" cy="20" r="3.2"/><circle cx="168" cy="20" r="3.2"/><circle cx="178" cy="20" r="3.2"/>
+        <circle cx="188" cy="20" r="3.2"/><circle cx="198" cy="20" r="3.2"/><circle cx="208" cy="20" r="3.2"/>
+        <circle cx="218" cy="20" r="3.2"/><circle cx="228" cy="20" r="3.2"/><circle cx="238" cy="20" r="3.2"/>
+        <circle cx="248" cy="20" r="3.2"/><circle cx="258" cy="20" r="3.2"/><circle cx="268" cy="20" r="3.2"/>
+        <circle cx="278" cy="20" r="3.2"/><circle cx="288" cy="20" r="3.2"/>
+    </g>
+</svg>
+
+<div class="chain-photo-glow" aria-hidden="true"></div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <a href="#home" class="logo">Rls<span>.exe</span></a>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Work</a>
+        <a href="#journey">Path</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <button type="button" class="magic-toggle magnetic" id="magicToggle" aria-pressed="false" title="Toggle magic mode">
+        <span class="mt-spark">✦</span> <span class="mt-label">Magic</span>
+    </button>
+    <div class="online-status"><span></span>Open for OJT · Oct 2026</div>
+</header>
+
+<!-- HERO -->
+<main>
+<section id="home" class="hero">
+
+    <!-- LEFT: text content -->
+    <div class="hero-left">
+        <div class="hero-glass" aria-hidden="true"></div>
+
+        <div class="hero-eyebrow">
+            <svg width="12" height="12" viewBox="0 0 24 24"><path d="M12 1 L13.2 10.8 L22 12 L13.2 13.2 L12 22 L10.8 13.2 L2 12 L10.8 10.8 Z" fill="currentColor"/></svg>
+            <span>Hello, I'm</span>
+        </div>
+
+        <h1 class="hero-name">
+            <span class="name-line name-first">Raisa Lee</span>
+            <span class="name-line name-last" data-text="Soriano">Soriano</span>
+        </h1>
+
+        <div class="hero-role">
+            <span>It Student</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" class="role-star"><path d="M12 1 L13.2 10.8 L22 12 L13.2 13.2 L12 22 L10.8 13.2 L2 12 L10.8 10.8 Z" fill="currentColor"/></svg>
+            <span>Front-End Developer</span>
+        </div>
+
+        <div class="status-chip">
+            <i class="status-dot" aria-hidden="true"></i>
+            <span>Open for OJT</span>
+            <b>Oct 2026</b>
+        </div>
+
+        <p class="hero-desc">
+            I design and build websites and digital experiences
+            with a mix of code, creativity, and a little bit of chaos.
+        </p>
+
+        <div class="now-rail" aria-label="Currently">
+            <b>NOW ·</b>
+            <span>Front-End</span>
+            <span>LegalLink Live</span>
+            <span>NU Dasma</span>
+        </div>
+
+        <div class="hero-actions">
+            <a href="#projects" class="btn-chrome magnetic">
+                <span>Explore My Work</span><strong>↗</strong>
+            </a>
+            <a href="#about" class="btn-ghost">Discover More <span>↓</span></a>
+        </div>
+
+        <div class="hero-coords">
+            <span class="coord-label">Philippines</span>
+            <span class="coord-val">14.5995° N · 120.9842° E</span>
+        </div>
+
+    </div>
+
+    <!-- RIGHT: maxi vinyl disc + wings -->
+    <div class="hero-right">
+
+        <!-- Angel wings behind disc -->
+        <svg class="disc-wings" viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg">
+            <!-- Left wing feathers -->
+            <g opacity=".78">
+                <path d="M250 140 C225 110 175 75 130 88 C108 95 100 115 118 124 C138 134 175 118 200 110 C180 130 155 155 138 172 C158 162 192 142 215 126 C205 145 196 168 198 188 C210 168 224 145 235 128 C230 148 228 172 232 192 C240 170 248 148 250 130 Z" fill="white" stroke="rgba(200,220,240,.6)" stroke-width=".8"/>
+                <!-- feather detail lines -->
+                <path d="M200 110 C185 125 170 142 158 158" stroke="rgba(210,228,245,.8)" stroke-width=".6" fill="none"/>
+                <path d="M215 126 C198 140 182 155 168 170" stroke="rgba(210,228,245,.8)" stroke-width=".6" fill="none"/>
+                <path d="M235 128 C220 142 207 157 196 172" stroke="rgba(210,228,245,.8)" stroke-width=".6" fill="none"/>
+                <!-- pink star on wing -->
+                <path d="M148 96 L150 102 L156 104 L150 106 L148 112 L146 106 L140 104 L146 102 Z" fill="#8bd3f7" opacity=".95"/>
+                <path d="M172 82 L173.5 87 L178 88 L173.5 89 L172 94 L170.5 89 L166 88 L170.5 87 Z" fill="#b8e8d9" opacity=".8"/>
+            </g>
+            <!-- Right wing (mirror) -->
+            <g transform="translate(500,0) scale(-1,1)" opacity=".78">
+                <path d="M250 140 C225 110 175 75 130 88 C108 95 100 115 118 124 C138 134 175 118 200 110 C180 130 155 155 138 172 C158 162 192 142 215 126 C205 145 196 168 198 188 C210 168 224 145 235 128 C230 148 228 172 232 192 C240 170 248 148 250 130 Z" fill="white" stroke="rgba(200,220,240,.6)" stroke-width=".8"/>
+                <path d="M200 110 C185 125 170 142 158 158" stroke="rgba(210,228,245,.8)" stroke-width=".6" fill="none"/>
+                <path d="M215 126 C198 140 182 155 168 170" stroke="rgba(210,228,245,.8)" stroke-width=".6" fill="none"/>
+                <path d="M148 96 L150 102 L156 104 L150 106 L148 112 L146 106 L140 104 L146 102 Z" fill="#8bd3f7" opacity=".95"/>
+            </g>
+            <!-- centre glow -->
+            <circle cx="250" cy="140" r="20" fill="rgba(255,255,255,.4)">
+                <animate attributeName="r" values="18;26;18" dur="3s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values=".4;.7;.4" dur="3s" repeatCount="indefinite"/>
+            </circle>
+        </svg>
+
+        <!-- Orbit rings -->
+        <div class="disc-orbit do-1"></div>
+        <div class="disc-orbit do-2"></div>
+
+        <!-- Orbiting 4-pt stars -->
+        <svg class="orbit-star os-1" viewBox="0 0 24 24"><path d="M12 1 L13.2 10.8 L22 12 L13.2 13.2 L12 22 L10.8 13.2 L2 12 L10.8 10.8 Z" fill="white"/></svg>
+        <svg class="orbit-star os-2" viewBox="0 0 24 24"><path d="M12 1 L13.2 10.8 L22 12 L13.2 13.2 L12 22 L10.8 13.2 L2 12 L10.8 10.8 Z" fill="#c8e8f8"/></svg>
+        <svg class="orbit-star os-3" viewBox="0 0 24 24"><path d="M12 1 L13.2 10.8 L22 12 L13.2 13.2 L12 22 L10.8 13.2 L2 12 L10.8 10.8 Z" fill="#d0f0de"/></svg>
+
+        <!-- The vinyl disc -->
+        <div class="vinyl-disc" id="vinylDisc">
+            <div class="vinyl-grooves"></div>
+            <div class="vinyl-sheen"></div>
+            <div class="vinyl-label">
+                <div class="vlabel-glow"></div>
+                <span class="vlabel-init">RS</span>
+                <span class="vlabel-sub">Digital · 2026</span>
+                <svg class="lspark lsp-1" viewBox="0 0 20 20"><path d="M10 0 L11 8.5 L19 10 L11 11.5 L10 20 L9 11.5 L1 10 L9 8.5 Z" fill="white"/></svg>
+                <svg class="lspark lsp-2" viewBox="0 0 20 20"><path d="M10 0 L11 8.5 L19 10 L11 11.5 L10 20 L9 11.5 L1 10 L9 8.5 Z" fill="white"/></svg>
+                <svg class="lspark lsp-3" viewBox="0 0 20 20"><path d="M10 0 L11 8.5 L19 10 L11 11.5 L10 20 L9 11.5 L1 10 L9 8.5 Z" fill="white"/></svg>
+                <svg class="lspark lsp-4" viewBox="0 0 20 20"><path d="M10 0 L11 8.5 L19 10 L11 11.5 L10 20 L9 11.5 L1 10 L9 8.5 Z" fill="white"/></svg>
+            </div>
+        </div>
+
+        <div class="disc-tag dt-top">01 / Create</div>
+        <div class="disc-tag dt-bot" id="vinylHint">Drag to spin ✦</div>
+
+    </div>
+
+    <!-- scroll hint -->
+    <div class="scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-track"><span></span></div>
+        <span>↓</span>
+    </div>
+
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap mq-stack">
+    <div class="marquee-track mq-a">
+        <span>Raisa Lee Soriano ✦ Raisa Lee Soriano ✦ Raisa Lee Soriano ✦ Raisa Lee Soriano ✦ </span>
+        <span>Raisa Lee Soriano ✦ Raisa Lee Soriano ✦ Raisa Lee Soriano ✦ Raisa Lee Soriano ✦ </span>
+    </div>
+    <div class="marquee-track mq-b">
+        <span>Raisa Lee Soriano · Front-End · IT Student · Raisa Lee Soriano · Front-End · IT Student · </span>
+        <span>Raisa Lee Soriano · Front-End · IT Student · Raisa Lee Soriano · Front-End · IT Student · </span>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="section about-section">
+    <div class="sec-frame" aria-hidden="true"></div>
+    <div class="sec-num">02</div>
+
+    <!-- section clouds -->
+    <div class="sec-clouds">
+        <svg viewBox="0 0 140 60"><ellipse cx="70" cy="42" rx="62" ry="22" fill="white" opacity=".38"/><ellipse cx="44" cy="32" rx="30" ry="22" fill="white" opacity=".38"/><ellipse cx="84" cy="27" rx="36" ry="24" fill="white" opacity=".38"/></svg>
+        <svg viewBox="0 0 100 48"><ellipse cx="50" cy="32" rx="44" ry="17" fill="white" opacity=".32"/><ellipse cx="30" cy="24" rx="22" ry="16" fill="white" opacity=".32"/><ellipse cx="62" cy="20" rx="25" ry="17" fill="white" opacity=".32"/></svg>
+    </div>
+
+    <div class="sec-title animate-in">
+        <p class="sec-label">A Little About Me</p>
+        <h2>More Than<br><span>Just Code.</span></h2>
+    </div>
+
+    <div class="about-grid">
+
+        <!-- Desktop folder card -->
+        <div class="folder-card animate-in" data-delay="80">
+            <div class="folder-tab">raisa_profile.exe</div>
+            <div class="folder-body">
+                <!-- inner window -->
+                <div class="folder-window">
+                    <div class="win-dots"><span></span><span></span><span></span></div>
+                    <div class="folder-content">
+                        <div class="profile-ring">
+                            <div class="profile-star-dec">
+                                <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 1 L13.2 10.8 L22 12 L13.2 13.2 L12 22 L10.8 13.2 L2 12 L10.8 10.8 Z" fill="#8bd3f7"/></svg>
+                            </div>
+                            <div class="profile-disc">
+                                <img src="assets/raisa-formal.png" alt="Raisa Lee Soriano — formal portrait" width="168" height="168">
+                            </div>
+                        </div>
+                        <!-- Small cloud inside -->
+                        <svg class="inner-cloud" viewBox="0 0 80 32"><ellipse cx="40" cy="22" rx="34" ry="11" fill="white" opacity=".4"/><ellipse cx="24" cy="16" rx="16" ry="12" fill="white" opacity=".4"/><ellipse cx="50" cy="13" rx="19" ry="13" fill="white" opacity=".4"/></svg>
+                        <!-- sailor moon accent: small bow -->
+                        <svg class="profile-bow" viewBox="0 0 50 32">
+                            <path d="M25 16 C18 9 5 6 4 14 C3 20 14 22 25 16 Z" fill="rgba(190,220,240,.85)" stroke="rgba(145,195,225,.6)" stroke-width="1"/>
+                            <path d="M25 16 C32 9 45 6 46 14 C47 20 36 22 25 16 Z" fill="rgba(190,220,240,.85)" stroke="rgba(145,195,225,.6)" stroke-width="1"/>
+                            <ellipse cx="25" cy="16" rx="3.5" ry="2.8" fill="rgba(205,230,245,.95)"/>
+                        </svg>
+                    </div>
+                </div>
+                <!-- folder label -->
+                <div class="folder-label">
+                    <svg width="10" height="10" viewBox="0 0 24 24"><path d="M12 1 L13.2 10.8 L22 12 L13.2 13.2 L12 22 L10.8 13.2 L2 12 L10.8 10.8 Z" fill="#90b8d0"/></svg>
+                    Raisa Lee Soriano
+                    <svg width="10" height="10" viewBox="0 0 24 24"><path d="M12 1 L13.2 10.8 L22 12 L13.2 13.2 L12 22 L10.8 13.2 L2 12 L10.8 10.8 Z" fill="#90b8d0"/></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- About text -->
+        <div class="about-text animate-in" data-delay="160">
+            <p class="about-big">Hi! I'm <strong>Raisa Lee Soriano</strong>, an IT student and front-end developer who enjoys creating things for the web.</p>
+            <p>I enjoy working with interfaces, experimenting with layouts, and turning ideas into interactive digital experiences.</p>
+            <p>I also have experience using <strong>Adobe Photoshop</strong> for basic design and editing.</p>
+            <div class="edu-block">
+                <span class="edu-label">Education</span>
+                <strong>National University Dasmariñas</strong>
+                <span>Bachelor of Science in Information Technology</span>
+                <span>Mobile &amp; Web Applications</span>
+                <span>Expected graduation · 2027</span>
+                <span>OJT starts · October 2026</span>
+            </div>
+            <div class="mini-stats">
+            <div class="stat-pop" data-tilt-mini><span>01</span><small>It Student</small></div>
+            <div class="stat-pop" data-tilt-mini><span>02</span><small>Front-End</small></div>
+            <div class="stat-pop" data-tilt-mini><span>03</span><small>Ui / Ux</small></div>
+            <div class="stat-pop" data-tilt-mini><span>04</span><small>Photoshop</small></div>
+        </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="skills-section">
+    <div class="skills-fx" aria-hidden="true">
+        <div class="sf-blob a"></div>
+        <div class="sf-blob b"></div>
+        <span class="sf-star">✦</span>
+        <span class="sf-star">✧</span>
+        <span class="sf-star">⋆</span>
+        <span class="sf-star">✩</span>
+    </div>
+    <svg class="skills-chain" viewBox="0 0 300 40" aria-hidden="true">
+        <defs><linearGradient id="skChain" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#fff"/><stop offset="50%" stop-color="#9eb4c4"/><stop offset="100%" stop-color="#e8f2f8"/></linearGradient></defs>
+        <g fill="url(#skChain)"><circle cx="8" cy="20" r="3.2"/><circle cx="18" cy="20" r="3.2"/><circle cx="28" cy="20" r="3.2"/><circle cx="38" cy="20" r="3.2"/><circle cx="48" cy="20" r="3.2"/><circle cx="58" cy="20" r="3.2"/><circle cx="68" cy="20" r="3.2"/><circle cx="78" cy="20" r="3.2"/><circle cx="88" cy="20" r="3.2"/><circle cx="98" cy="20" r="3.2"/><circle cx="108" cy="20" r="3.2"/><circle cx="118" cy="20" r="3.2"/><circle cx="128" cy="20" r="3.2"/><circle cx="138" cy="20" r="3.2"/><circle cx="148" cy="20" r="3.2"/><circle cx="158" cy="20" r="3.2"/><circle cx="168" cy="20" r="3.2"/><circle cx="178" cy="20" r="3.2"/><circle cx="188" cy="20" r="3.2"/><circle cx="198" cy="20" r="3.2"/><circle cx="208" cy="20" r="3.2"/><circle cx="218" cy="20" r="3.2"/><circle cx="228" cy="20" r="3.2"/><circle cx="238" cy="20" r="3.2"/><circle cx="248" cy="20" r="3.2"/><circle cx="258" cy="20" r="3.2"/><circle cx="268" cy="20" r="3.2"/><circle cx="278" cy="20" r="3.2"/><circle cx="288" cy="20" r="3.2"/></g>
+    </svg>
+    <svg class="skills-chain-l" viewBox="0 0 300 40" aria-hidden="true">
+        <g fill="url(#skChain)"><circle cx="8" cy="20" r="3"/><circle cx="18" cy="20" r="3"/><circle cx="28" cy="20" r="3"/><circle cx="38" cy="20" r="3"/><circle cx="48" cy="20" r="3"/><circle cx="58" cy="20" r="3"/><circle cx="68" cy="20" r="3"/><circle cx="78" cy="20" r="3"/><circle cx="88" cy="20" r="3"/><circle cx="98" cy="20" r="3"/><circle cx="108" cy="20" r="3"/><circle cx="118" cy="20" r="3"/><circle cx="128" cy="20" r="3"/><circle cx="138" cy="20" r="3"/><circle cx="148" cy="20" r="3"/><circle cx="158" cy="20" r="3"/><circle cx="168" cy="20" r="3"/><circle cx="178" cy="20" r="3"/><circle cx="188" cy="20" r="3"/><circle cx="198" cy="20" r="3"/><circle cx="208" cy="20" r="3"/><circle cx="218" cy="20" r="3"/><circle cx="228" cy="20" r="3"/><circle cx="238" cy="20" r="3"/></g>
+    </svg>
+    <div class="sec-num">03</div>
+    <div class="sec-title animate-in">
+        <p class="sec-label">My Digital Toolbox</p>
+        <h2>Things I<br><span>Use.</span></h2>
+        <div class="skills-chips" aria-hidden="true">
+            <span>06 TOOLS</span>
+            <span>MOBILE + WEB</span>
+            <span>OJT READY</span>
+        </div>
+    </div>
+    <div class="skills-list animate-in" data-delay="80">
+        <div class="skill" tabindex="0"><span class="sk-n">01</span><span class="sk-name">Html / Css</span><span class="sk-eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="sk-type">Front-End</span><span class="sk-arr">↗</span></div>
+        <div class="skill" tabindex="0"><span class="sk-n">02</span><span class="sk-name">Javascript</span><span class="sk-eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="sk-type">Interaction</span><span class="sk-arr">↗</span></div>
+        <div class="skill" tabindex="0"><span class="sk-n">03</span><span class="sk-name">Flutter</span><span class="sk-eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="sk-type">Mobile</span><span class="sk-arr">↗</span></div>
+        <div class="skill" tabindex="0"><span class="sk-n">04</span><span class="sk-name">React</span><span class="sk-eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="sk-type">Front-End</span><span class="sk-arr">↗</span></div>
+        <div class="skill" tabindex="0"><span class="sk-n">05</span><span class="sk-name">Figma</span><span class="sk-eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="sk-type">Ui / Ux</span><span class="sk-arr">↗</span></div>
+        <div class="skill" tabindex="0"><span class="sk-n">06</span><span class="sk-name">Adobe Photoshop</span><span class="sk-eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="sk-type">Basic</span><span class="sk-arr">↗</span></div>
+    </div>
+
+    <div class="learning-block animate-in" data-delay="120">
+        <p class="learning-label">● Currently Learning</p>
+        <h3 class="learning-title">
+            <svg class="bunny-mark" viewBox="0 0 64 72" aria-hidden="true">
+                <ellipse cx="18" cy="18" rx="9" ry="20" fill="#fff" transform="rotate(-18 18 18)"/>
+                <ellipse cx="18" cy="20" rx="4.5" ry="12" fill="#c5e8f7" transform="rotate(-18 18 20)"/>
+                <ellipse cx="46" cy="18" rx="9" ry="20" fill="#fff" transform="rotate(18 46 18)"/>
+                <ellipse cx="46" cy="20" rx="4.5" ry="12" fill="#c5e8f7" transform="rotate(18 46 20)"/>
+                <ellipse cx="32" cy="48" rx="20" ry="18" fill="#fff"/>
+                <circle cx="24" cy="46" r="2.4" fill="#2a3540"/>
+                <circle cx="40" cy="46" r="2.4" fill="#2a3540"/>
+                <ellipse cx="32" cy="52" rx="2.2" ry="1.6" fill="#8bd3f7"/>
+            </svg>
+            Growing My Stack.
+        </h3>
+        <ul class="learning-list">
+            <li>
+                <strong>Advanced React</strong>
+                <span>Reusable components, state management, and better app structure</span>
+            </li>
+            <li>
+                <strong>React Native</strong>
+                <span>Building more complete mobile applications</span>
+            </li>
+            <li>
+                <strong>UI/UX Design</strong>
+                <span>Improving layouts, interactions, and user experience</span>
+            </li>
+            <li>
+                <strong>Tailwind CSS</strong>
+                <span>Faster and cleaner responsive styling</span>
+            </li>
+            <li>
+                <strong>Laravel / PHP</strong>
+                <span>Backend development and APIs</span>
+            </li>
+            <li>
+                <strong>Git &amp; GitHub</strong>
+                <span>Better version control and collaboration</span>
+            </li>
+            <li>
+                <strong>Responsive Web Design</strong>
+                <span>Making websites work well on different screen sizes</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section proj-section">
+    <div class="sec-frame" aria-hidden="true"></div>
+    <div class="sec-num">04</div>
+    <!-- cloud accent -->
+    <svg class="proj-cloud" viewBox="0 0 140 58"><ellipse cx="70" cy="40" rx="62" ry="21" fill="white" opacity=".3"/><ellipse cx="42" cy="30" rx="30" ry="21" fill="white" opacity=".3"/><ellipse cx="84" cy="26" rx="36" ry="23" fill="white" opacity=".3"/></svg>
+    <div class="sec-title animate-in">
+        <p class="sec-label">Selected Projects</p>
+        <h2>Things I've<br><span>Built.</span></h2>
+    </div>
+    <div class="projects-grid">
+        <article class="proj-card jewel animate-in" data-delay="0">
+            <div class="proj-bezel" aria-hidden="true"></div>
+            <div class="proj-meta"><span>01 / 2026</span><span class="proj-status">CASE FILE</span></div>
+            <div class="proj-img amora">
+                <div class="proj-spotlight" aria-hidden="true"></div>
+                <div class="proj-glow"></div>
+                <div class="proj-sym">✿</div>
+                <div class="proj-word">Amora</div>
+                <div class="proj-sub">Florals</div>
+                <div class="proj-sparks">✦ &nbsp;✧ &nbsp;✦</div>
+                <div class="proj-shine"></div>
+                <div class="proj-stamp">SOFT · SHOP</div>
+            </div>
+            <div class="proj-info">
+                <div>
+                    <h3>Amora Florals</h3>
+                    <p>A floral shop experience combining soft visuals, product discovery, and elegant interaction.</p>
+                </div>
+                <a href="https://github.com/shaeijmnz/amora_mobile" target="_blank" rel="noopener noreferrer" class="proj-cta magnetic"><span>View Project</span><b>↗</b></a>
+            </div>
+            <div class="proj-tags"><span>Ui / Ux</span><span>Flutter</span><span>E-Commerce</span></div>
+            <div class="proj-chrome-sheen" aria-hidden="true"></div>
+        </article>
+        <article class="proj-card dossier animate-in" data-delay="110">
+            <div class="proj-bezel" aria-hidden="true"></div>
+            <div class="proj-meta"><span>02 / 2026</span><span class="proj-status live">● LIVE</span></div>
+            <div class="proj-img legallink">
+                <div class="proj-spotlight" aria-hidden="true"></div>
+                <div class="legal-sym">§</div>
+                <div class="proj-word">LegalLink</div>
+                <div class="proj-sub">Legal Services</div>
+                <div class="proj-sparks">✦ &nbsp;✧</div>
+                <div class="proj-shine"></div>
+                <div class="proj-stamp">LEGAL · WEB</div>
+            </div>
+            <div class="proj-info">
+                <div>
+                    <h3>LegalLink</h3>
+                    <p>A digital platform designed to make legal services easier to access and understand.</p>
+                </div>
+                <a href="https://batasmo-web.vercel.app/" target="_blank" rel="noopener noreferrer" class="proj-cta magnetic"><span>View Live</span><b>↗</b></a>
+            </div>
+            <div class="proj-tags"><span>Web</span><span>Ui / Ux</span></div>
+            <div class="proj-chrome-sheen" aria-hidden="true"></div>
+        </article>
+    </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey" class="journey-section">
+    <div class="journey-glow" aria-hidden="true"></div>
+    <p class="sec-num journey-num">03.5</p>
+    <div class="sec-title animate-in">
+        <p class="sec-label">Path So Far</p>
+        <h2>Where I'm<br><span>Going.</span></h2>
+    </div>
+    <div class="journey-track">
+        <article class="journey-card animate-in" data-delay="0" data-parallax="0.04">
+            <span class="jc-year">Now</span>
+            <h3>Building Interfaces</h3>
+            <p>Designing and coding soft, interactive web experiences with HTML, CSS, JS, and React.</p>
+            <div class="jc-tags"><span>Front-End</span><span>UI Motion</span></div>
+        </article>
+        <article class="journey-card animate-in" data-delay="80" data-parallax="0.07">
+            <span class="jc-year">Oct 2026</span>
+            <h3>OJT Season</h3>
+            <p>Open for internship — ready to ship real products, learn from a team, and grow fast.</p>
+            <div class="jc-tags"><span>Internship</span><span>Available</span></div>
+        </article>
+        <article class="journey-card animate-in" data-delay="160" data-parallax="0.05">
+            <span class="jc-year">2027</span>
+            <h3>Graduation</h3>
+            <p>BSIT · Mobile &amp; Web Applications at National University Dasmariñas.</p>
+            <div class="jc-tags"><span>NU Dasma</span><span>BSIT</span></div>
+        </article>
+        <article class="journey-card animate-in" data-delay="240" data-parallax="0.09">
+            <span class="jc-year">Next</span>
+            <h3>Mobile + Web</h3>
+            <p>Leveling up with Advanced React, React Native, Tailwind, and Laravel / PHP.</p>
+            <div class="jc-tags"><span>Learning</span><span>Stack</span></div>
+        </article>
+    </div>
+</section>
+
+<!-- FIELD LOG -->
+<section class="field-section" id="signals">
+    <div class="field-frame" aria-hidden="true"></div>
+    <div class="field-head animate-in">
+        <p class="sec-num">04</p>
+        <div>
+            <p class="sec-label">Operating Notes</p>
+            <h2>Field <span>Log.</span></h2>
+        </div>
+        <p class="field-aside">NOT A MOODBOARD — HOW I ACTUALLY WORK</p>
+    </div>
+    <div class="field-log">
+        <article class="field-row animate-in" data-delay="0">
+            <span class="fr-code">01</span>
+            <div class="fr-main">
+                <h3>Motion first</h3>
+                <p>Interfaces should feel responsive before they look pretty. Hover, scroll, and timing are part of the design.</p>
+            </div>
+            <span class="fr-tag">INTERACTION</span>
+        </article>
+        <article class="field-row animate-in" data-delay="70">
+            <span class="fr-code">02</span>
+            <div class="fr-main">
+                <h3>Sketch → ship</h3>
+                <p>Moodboards open the door. Clean HTML, CSS, and JS walk through it — playful, but production-ready.</p>
+            </div>
+            <span class="fr-tag">CRAFT</span>
+        </article>
+        <article class="field-row animate-in" data-delay="140">
+            <span class="fr-code">03</span>
+            <div class="fr-main">
+                <h3>Mobile + web next</h3>
+                <p>Leveling into Advanced React, React Native, Tailwind, and Laravel — ready for OJT by October 2026.</p>
+            </div>
+            <span class="fr-tag">TRAJECTORY</span>
+        </article>
+    </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement-section">
+    <div class="stmt-orb"></div>
+    <div class="glass-heart" aria-hidden="true"></div>
+    <svg class="stmt-cloud" viewBox="0 0 180 70"><ellipse cx="90" cy="50" rx="80" ry="24" fill="white" opacity=".22"/><ellipse cx="54" cy="38" rx="38" ry="26" fill="white" opacity=".22"/><ellipse cx="108" cy="32" rx="44" ry="28" fill="white" opacity=".22"/></svg>
+    <!-- wing accent behind statement -->
+    <svg class="stmt-wing" viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
+        <g opacity=".35">
+            <path d="M150 80 C132 58 94 34 62 48 C44 56 38 74 54 82 C72 91 106 75 128 68 C110 86 86 108 68 124 C88 114 120 96 142 78 C130 98 120 124 122 145 C134 122 146 98 152 80 Z" fill="white"/>
+        </g>
+        <g transform="translate(300,0) scale(-1,1)" opacity=".35">
+            <path d="M150 80 C132 58 94 34 62 48 C44 56 38 74 54 82 C72 91 106 75 128 68 C110 86 86 108 68 124 C88 114 120 96 142 78 C130 98 120 124 122 145 C134 122 146 98 152 80 Z" fill="white"/>
+        </g>
+    </svg>
+    <p class="stmt-eye animate-in">I Like Making</p>
+    <h2 class="stmt-h2 animate-in" data-delay="80" id="stmtTitle">Things That<br><span class="chrome-liquid">Feel Alive.</span></h2>
+    <button type="button" class="stmt-magic magnetic" id="stmtMagic">✦ Cast Sparkle</button>
+    <svg class="stmt-chain" viewBox="0 0 300 40" aria-hidden="true">
+        <defs><linearGradient id="stmtChain" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#fff"/><stop offset="40%" stop-color="#a8bcc8"/><stop offset="100%" stop-color="#e8f2f8"/></linearGradient></defs>
+        <g fill="url(#stmtChain)"><circle cx="8" cy="20" r="3.5"/><circle cx="20" cy="20" r="3.5"/><circle cx="32" cy="20" r="3.5"/><circle cx="44" cy="20" r="3.5"/><circle cx="56" cy="20" r="3.5"/><circle cx="68" cy="20" r="3.5"/><circle cx="80" cy="20" r="3.5"/><circle cx="92" cy="20" r="3.5"/><circle cx="104" cy="20" r="3.5"/><circle cx="116" cy="20" r="3.5"/><circle cx="128" cy="20" r="3.5"/><circle cx="140" cy="20" r="3.5"/><circle cx="152" cy="20" r="3.5"/><circle cx="164" cy="20" r="3.5"/><circle cx="176" cy="20" r="3.5"/><circle cx="188" cy="20" r="3.5"/><circle cx="200" cy="20" r="3.5"/><circle cx="212" cy="20" r="3.5"/><circle cx="224" cy="20" r="3.5"/><circle cx="236" cy="20" r="3.5"/><circle cx="248" cy="20" r="3.5"/><circle cx="260" cy="20" r="3.5"/><circle cx="272" cy="20" r="3.5"/><circle cx="284" cy="20" r="3.5"/></g>
+    </svg>
+    <div class="stmt-sparkle animate-in" data-delay="160">
+        <svg viewBox="0 0 30 30"><path d="M15 1 L16.4 13 L28 15 L16.4 17 L15 29 L13.6 17 L2 15 L13.6 13 Z" fill="currentColor"/></svg>
+    </div>
+    <div class="stmt-meta animate-in" data-delay="200">
+        <span>✦ CHROME</span>
+        <span>✧ MAGICAL</span>
+        <span>★ 2026–2027</span>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+    <div class="contact-fx" aria-hidden="true">
+        <div class="cfx-blob a"></div>
+        <div class="cfx-blob b"></div>
+        <div class="cfx-blob c"></div>
+        <div class="cfx-orb"></div>
+        <span class="cfx-star s1">✦</span>
+        <span class="cfx-star s2">✧</span>
+        <span class="cfx-star s3">⋆</span>
+        <span class="cfx-star s4">✩</span>
+        <span class="cfx-star s5">✦</span>
+        <span class="cfx-bubble b1"></span>
+        <span class="cfx-bubble b2"></span>
+        <span class="cfx-bubble b3"></span>
+        <span class="cfx-sticker st-a">✦ SAY HI</span>
+        <span class="cfx-sticker st-b">★ OJT 10/26</span>
+    </div>
+    <div class="contact-frame" aria-hidden="true"></div>
+    <svg class="contact-chain-top" viewBox="0 0 300 40" aria-hidden="true">
+        <defs><linearGradient id="ccChain" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#fff"/><stop offset="45%" stop-color="#9eb4c4"/><stop offset="100%" stop-color="#e8f2f8"/></linearGradient></defs>
+        <g fill="url(#ccChain)"><circle cx="8" cy="20" r="3.4"/><circle cx="20" cy="20" r="3.4"/><circle cx="32" cy="20" r="3.4"/><circle cx="44" cy="20" r="3.4"/><circle cx="56" cy="20" r="3.4"/><circle cx="68" cy="20" r="3.4"/><circle cx="80" cy="20" r="3.4"/><circle cx="92" cy="20" r="3.4"/><circle cx="104" cy="20" r="3.4"/><circle cx="116" cy="20" r="3.4"/><circle cx="128" cy="20" r="3.4"/><circle cx="140" cy="20" r="3.4"/><circle cx="152" cy="20" r="3.4"/><circle cx="164" cy="20" r="3.4"/><circle cx="176" cy="20" r="3.4"/><circle cx="188" cy="20" r="3.4"/><circle cx="200" cy="20" r="3.4"/><circle cx="212" cy="20" r="3.4"/><circle cx="224" cy="20" r="3.4"/><circle cx="236" cy="20" r="3.4"/><circle cx="248" cy="20" r="3.4"/><circle cx="260" cy="20" r="3.4"/><circle cx="272" cy="20" r="3.4"/><circle cx="284" cy="20" r="3.4"/></g>
+    </svg>
+    <svg class="contact-chain-side" viewBox="0 0 60 280" aria-hidden="true">
+        <defs><linearGradient id="ccLink" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fff"/><stop offset="50%" stop-color="#a8bcc8"/><stop offset="100%" stop-color="#6a7e8e"/></linearGradient></defs>
+        <g fill="none" stroke="url(#ccLink)" stroke-width="5" stroke-linecap="round">
+            <ellipse cx="30" cy="20" rx="12" ry="9" transform="rotate(10 30 20)"/>
+            <ellipse cx="30" cy="48" rx="12" ry="9" transform="rotate(-10 30 48)"/>
+            <ellipse cx="30" cy="76" rx="12" ry="9" transform="rotate(10 30 76)"/>
+            <ellipse cx="30" cy="104" rx="12" ry="9" transform="rotate(-10 30 104)"/>
+            <ellipse cx="30" cy="132" rx="12" ry="9" transform="rotate(10 30 132)"/>
+            <ellipse cx="30" cy="160" rx="12" ry="9" transform="rotate(-10 30 160)"/>
+            <ellipse cx="30" cy="188" rx="12" ry="9" transform="rotate(10 30 188)"/>
+            <ellipse cx="30" cy="216" rx="12" ry="9" transform="rotate(-10 30 216)"/>
+            <ellipse cx="30" cy="244" rx="12" ry="9" transform="rotate(10 30 244)"/>
+        </g>
+    </svg>
+    <div class="contact-num">05 — Contact</div>
+    <svg class="cc-l" viewBox="0 0 120 52"><ellipse cx="60" cy="36" rx="54" ry="19" fill="white" opacity=".28"/><ellipse cx="36" cy="28" rx="27" ry="18" fill="white" opacity=".28"/><ellipse cx="72" cy="24" rx="31" ry="20" fill="white" opacity=".28"/></svg>
+    <svg class="cc-r" viewBox="0 0 100 46"><ellipse cx="50" cy="30" rx="44" ry="16" fill="white" opacity=".25"/><ellipse cx="30" cy="22" rx="22" ry="15" fill="white" opacity=".25"/><ellipse cx="62" cy="18" rx="25" ry="17" fill="white" opacity=".25"/></svg>
+    <div class="contact-inner animate-in">
+        <p class="contact-eye">Have An Idea?</p>
+        <h2 class="contact-h2">Let's Make<br><span>Something Cool.</span></h2>
+        <svg class="contact-chain-under" viewBox="0 0 280 28" aria-hidden="true">
+            <g fill="url(#ccChain)"><circle cx="6" cy="14" r="2.8"/><circle cx="16" cy="14" r="2.8"/><circle cx="26" cy="14" r="2.8"/><circle cx="36" cy="14" r="2.8"/><circle cx="46" cy="14" r="2.8"/><circle cx="56" cy="14" r="2.8"/><circle cx="66" cy="14" r="2.8"/><circle cx="76" cy="14" r="2.8"/><circle cx="86" cy="14" r="2.8"/><circle cx="96" cy="14" r="2.8"/><circle cx="106" cy="14" r="2.8"/><circle cx="116" cy="14" r="2.8"/><circle cx="126" cy="14" r="2.8"/><circle cx="136" cy="14" r="2.8"/><circle cx="146" cy="14" r="2.8"/><circle cx="156" cy="14" r="2.8"/><circle cx="166" cy="14" r="2.8"/><circle cx="176" cy="14" r="2.8"/><circle cx="186" cy="14" r="2.8"/><circle cx="196" cy="14" r="2.8"/><circle cx="206" cy="14" r="2.8"/><circle cx="216" cy="14" r="2.8"/><circle cx="226" cy="14" r="2.8"/><circle cx="236" cy="14" r="2.8"/><circle cx="246" cy="14" r="2.8"/><circle cx="256" cy="14" r="2.8"/><circle cx="266" cy="14" r="2.8"/></g>
+        </svg>
+        <a href="mailto:raisalee05@gmail.com" class="btn-chrome magnetic">Say Hello ↗</a>
+        <div class="contact-creds">
+            <a href="mailto:raisalee05@gmail.com" title="Click to copy email">raisalee05@gmail.com</a>
+            <a href="https://github.com/rxasrn" target="_blank" rel="noopener noreferrer">github.com/rxasrn</a>
+            <a href="https://www.linkedin.com/in/raisasoriano21/" target="_blank" rel="noopener noreferrer">linkedin.com/in/raisasoriano21</a>
+        </div>
+    </div>
+    <div class="contact-decor">♡ &nbsp;✦ &nbsp;✧ &nbsp;♡ &nbsp;✦ &nbsp;✧</div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <span>© 2026 Raisa Lee Soriano</span>
+    <span>Made With ♡ &amp; Code</span>
+    <a href="https://github.com/rxasrn" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/in/raisasoriano21/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <span id="clock">00:00:00 — Online</span>
+</footer>
+
+<div id="hearts-container"></div>
+<script src="script.js"></script>
+</body>
+</html>
